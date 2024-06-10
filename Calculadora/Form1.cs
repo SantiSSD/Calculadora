@@ -106,36 +106,46 @@ namespace Calculadora
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
-            //Boton igual
-           
-            num2 = Convert.ToDouble(txtDisplay.Text);
-
-            resultado = num1 + num2;
-
-            switch (operacion)
+            try
             {
-                case 1:
-                    resultado = num1 + num2;
-                    break;
+                num2 = Convert.ToDouble(txtDisplay.Text); // Convierte el texto en pantalla a un número
 
-                    case 2:
-                    resultado = num1 - num2;
-                    break;
+                switch (operacion)
+                {
+                    case 1: // Suma
+                        resultado = num1 + num2;
+                        break;
+                    case 2: // Resta
+                        resultado = num1 - num2;
+                        break;
+                    case 3: // Multiplicación
+                        resultado = num1 * num2;
+                        break;
+                    case 4: // División
+                        if (num2 != 0)
+                        {
+                            resultado = num1 / num2;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede dividir por cero."); // Muestra un mensaje si se intenta dividir por cero
+                            txtDisplay.Text = ""; // Limpia el display
+                            return; // Sale del método para evitar actualizar el display con un resultado no válido
+                        }
+                        break;
+                    default:
+                        MessageBox.Show("Operación no válida."); // Muestra un mensaje si la operación no es válida
+                        return;
+                }
 
-                case 3:
-                    resultado = num1 * num2;
-                    break;
-                 
-                case 4:
-                    resultado = num1 / num2;
-                    break;
-
-
-
+                txtDisplay.Text = resultado.ToString(); // Muestra el resultado en el display
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message); // Muestra un mensaje de error si ocurre una excepción
+                txtDisplay.Text = ""; // Limpia el display en caso de error
             }
 
-            txtDisplay.Text = resultado.ToString();
-           
 
         }
 
