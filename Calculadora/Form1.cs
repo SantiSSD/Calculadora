@@ -151,37 +151,72 @@ namespace Calculadora
 
         private void btnSumar_Click(object sender, EventArgs e)
         {
-            operacion = 1;
-            num1 = Convert.ToDouble(txtDisplay.Text);
-            txtDisplay.Text = "";
+            try
+            {
+                operacion = 1;
+                num1 = Convert.ToDouble(txtDisplay.Text);
+                txtDisplay.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+           
         }
 
         private void btnRestar_Click(object sender, EventArgs e)
         {
             //boton resta
-            operacion = 2;
-            num1 = Convert.ToDouble(txtDisplay.Text);
+            try
+            {
+                operacion = 2;
+                num1 = Convert.ToDouble(txtDisplay.Text);
 
 
-            txtDisplay.Text = "";
+                txtDisplay.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
 
         }
 
         private void btnMultiplicar_Click(object sender, EventArgs e)
         {
             //boton Multiplicar
-            operacion = 3;
-            num1 = Convert.ToDouble(txtDisplay.Text);
-            txtDisplay.Text = "";
+            try
+            {
+                operacion = 3;
+                num1 = Convert.ToDouble(txtDisplay.Text);
+                txtDisplay.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+               
+            }
+            
 
 
         }
 
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            operacion = 4;
-            num1 = Convert.ToDouble(txtDisplay.Text);
-            txtDisplay.Text = "";
+            try
+            {
+                operacion = 4;
+                num1 = Convert.ToDouble(txtDisplay.Text);
+                txtDisplay.Text = "";
+            }
+            catch (Exception ex)
+            {
+
+                
+            }
+            
 
 
 
