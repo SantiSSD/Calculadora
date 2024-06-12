@@ -24,6 +24,13 @@ namespace Calculadora
         {
             InitializeComponent();
         }
+        public void convert() 
+        
+        {
+            num1 = Convert.ToDouble(txtDisplay.Text);
+            txtDisplay.Text = "";
+
+        }
 
         private void btn0_Click(object sender, EventArgs e)
         {
@@ -154,8 +161,8 @@ namespace Calculadora
             try
             {
                 operacion = 1;
-                num1 = Convert.ToDouble(txtDisplay.Text);
-                txtDisplay.Text = "";
+                convert();
+               
             }
             catch (Exception ex)
             {
@@ -171,10 +178,7 @@ namespace Calculadora
             try
             {
                 operacion = 2;
-                num1 = Convert.ToDouble(txtDisplay.Text);
-
-
-                txtDisplay.Text = "";
+                convert();
             }
             catch (Exception ex)
             {
@@ -190,8 +194,7 @@ namespace Calculadora
             try
             {
                 operacion = 3;
-                num1 = Convert.ToDouble(txtDisplay.Text);
-                txtDisplay.Text = "";
+                convert();
             }
             catch (Exception ex)
             {
@@ -208,8 +211,7 @@ namespace Calculadora
             try
             {
                 operacion = 4;
-                num1 = Convert.ToDouble(txtDisplay.Text);
-                txtDisplay.Text = "";
+                convert();
             }
             catch (Exception ex)
             {
